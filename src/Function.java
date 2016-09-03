@@ -112,8 +112,7 @@ abstract public class Function {
 
             if (depth == 0 && keys.indexOf(s.charAt(i)) >= 0)
                 return i;
-            if(depth == 0 && keys.lastIndexOf(s.charAt(i)) > 0)
-                return keys.lastIndexOf(s.charAt(i));
+
         }
         return -1;
     }
