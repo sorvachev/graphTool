@@ -97,4 +97,21 @@ abstract public class Function {
         else
             return String.valueOf(value);
     }
+    private static int findLowLevel(String s, String keys)
+    {
+        int depth = 0;
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            if (c == '(')
+                depth++;
+            else if (c == ')')
+                depth--;
+
+            if (depth == 0 && keys.indexOf(s.charAt(i)) >= 0)
+                return i;
+        }
+        return -1;
+    }
 }
