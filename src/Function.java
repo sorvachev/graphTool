@@ -110,7 +110,7 @@ abstract public class Function {
             else if (c == ')')
                 depth--;
 
-            if (depth == 0 && keys.indexOf(s.charAt(i)) >= 0)
+            if (depth == 0 && keys.indexOf(s.charAt(i)) > 0)
                 return i;
 
         }
