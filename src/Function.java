@@ -9,7 +9,7 @@ abstract public class Function {
     public boolean parity;
     private String name;
     abstract String  getName();
-    abstract  Function  getApproximation(Function f);
+    abstract  double  getApproximation(double a);
     public  String getTargetName()
     {
         return "[" + name + "]";
@@ -67,7 +67,7 @@ abstract public class Function {
             }
 
             @Override
-            Function getApproximation(Function f) {
+            Function getApproximation(double f) {
                 return null;
             }
         };
