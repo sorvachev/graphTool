@@ -67,8 +67,8 @@ abstract public class Function {
             }
 
             @Override
-            Function getApproximation(double f) {
-                return null;
+            double getApproximation(double f) {
+                return 0;
             }
         };
 
