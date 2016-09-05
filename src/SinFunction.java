@@ -1,7 +1,10 @@
-public class AbsFunction extends Function {
+/**
+ * Created by sakic on 9/5/16.
+ */
+public class SinFunction extends Function {
     private final Function target;
 
-    public AbsFunction(Function target) {
+    public SinFunction(Function target) {
         this.target = target;
     }
 
@@ -16,17 +19,17 @@ public class AbsFunction extends Function {
     }
 
     public Function getRetargeted(Function t) {
-        return new AbsFunction(t);
+        return new SinFunction(t);
     }
 
 
     public double getApproximation(double val) {
-        return Math.abs(target.getApproximation(val));
+        return Math.sin(target.getApproximation(val));
     }
 
     @Override
     Function getDerive() {
-        return null;
+        return new CosFunction(target);
     }
 
 

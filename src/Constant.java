@@ -37,7 +37,7 @@ public class Constant extends Function
         return value;
     }
 
-    public Function derive()
+    public Function getDerive()
     {
         return ZERO;
     }

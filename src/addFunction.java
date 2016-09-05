@@ -9,14 +9,18 @@ public class addFunction extends Function
     }
 
 
-    @Override
+
     String getName() {
-        return null;
+        return a.getName() + "+" + b.getName();
     }
 
     public double getApproximation(double val)
     {
         return a.getApproximation(val) + b.getApproximation(val);
+    }
+    public Function getDerive()
+    {
+        return getInstance(a.getDerive(), b.getDerive());
     }
 
 

@@ -10,6 +10,7 @@ abstract public class Function {
     private String name;
     abstract String  getName();
     abstract  double  getApproximation(double a);
+    abstract Function  getDerive();
     public  String getTargetName()
     {
         return "[" + name + "]";
@@ -34,6 +35,19 @@ abstract public class Function {
 
 
 
+    }
+
+    public boolean needsBrackets()
+    {
+        return true;
+    }
+
+    public static String getBracketed(Function f)
+    {
+        if (f.needsBrackets())
+            return "(" + f + ")";
+        else
+            return f.getTargetName();
     }
     public static String truncate(String s, int places)
 
@@ -70,10 +84,16 @@ abstract public class Function {
             double getApproximation(double f) {
                 return 0;
             }
+
+            @Override
+            Function getDerive() {
+                return null;
+            }
         };
 
 
     }
+
     private static String formatInputLine(String s)
     {
         StringBuilder sb = new StringBuilder();
@@ -91,6 +111,20 @@ abstract public class Function {
         return sb.toString();
     }
 
+    public String format(String s)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            while(i > 0 && c >='x'  && Character.isDigit(s.charAt(i - 1)))
+            {
+                sb.append('*');
+            }
+
+        }
+        return sb.toString();
+    }
     public static String formatNumber(double value)
     {
         if (value % 1 == 0)
