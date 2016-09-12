@@ -32,13 +32,10 @@ public class TanFunction extends Function
         return Math.tan(target.getApproximation(val));
     }
 
+
+
     @Override
     Function getDerive() {
-        return null;
-    }
-
-    public Function getDerivative(Function t)
-    {
-        return MultiplyFunction.getInstance(Constant.ONE, Monomial.getInstance(SubstactFunction.getInstance(Constant.ONE, Monomial.getInstance(target, 2)), 0.5 ));
+        return  DivideFunction.getInstance(Constant.ONE, Monomial.getInstance(new SinFunction(target), 2));
     }
 }

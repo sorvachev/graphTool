@@ -18,14 +18,12 @@ public class ArcCosFunction  extends Function{
         return Math.acos(target.getApproximation(a));
     }
 
-    @Override
-    Function getDerive() {
-       return  DivideFunction.getInstance(Constant.ONE, Monomial.getInstance(new SinFunction(target), 2));
-    }
-    @Override
-    Function getInstance(Function a, Function b)
-    {
 
+
+    public Function getDerive()
+    {
+        return MultiplyFunction.getInstance(Constant.ONE, Monomial.getInstance(SubstactFunction.getInstance(Constant.ONE, Monomial.getInstance(target, 2)), 0.5 ));
     }
+   
 
 }
