@@ -39,6 +39,6 @@ public class TanFunction extends Function
 
     public Function getDerivative(Function t)
     {
-        return MultiplyFunction.getInstance(Constant.ONE, Monomial.getInstance(new CosFunction(t), 2));
+        return MultiplyFunction.getInstance(Constant.ONE, Monomial.getInstance(SubstactFunction.getInstance(Constant.ONE, Monomial.getInstance(target, 2)), 0.5 ));
     }
 }

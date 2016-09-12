@@ -9,18 +9,23 @@ public class ArcCosFunction  extends Function{
     }
     public String getName()
     {
-        return "arcsin(" + target.getName() + ")";
+        return "arcos(" + target.getName() + ")";
 
     }
 
     @Override
     double getApproximation(double a) {
-        return Math.sin(target.getApproximation(a));
+        return Math.acos(target.getApproximation(a));
     }
 
     @Override
     Function getDerive() {
-        return null;
+       return  DivideFunction.getInstance(Constant.ONE, Monomial.getInstance(new SinFunction(target), 2));
+    }
+    @Override
+    Function getInstance(Function a, Function b)
+    {
+
     }
 
 }

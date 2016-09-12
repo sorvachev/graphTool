@@ -1,6 +1,7 @@
 /**
  * Created by sakic on 9/5/16.
  */
+
 public class DivideFunction  extends Function {
     public final Function a, b;
     public DivideFunction(Function a, Function b)
