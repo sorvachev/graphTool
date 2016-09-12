@@ -68,7 +68,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
     }
 
     @Override
