@@ -20,8 +20,8 @@ public class AbsFunction extends Function {
     }
 
 
-    public double getApproximation(double val) {
-        return Math.abs(target.getApproximation(val));
+    public double getApproximation() {
+        return Math.abs(target.getApproximation());
     }
 
     @Override

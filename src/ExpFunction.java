@@ -25,11 +25,11 @@ public class ExpFunction extends Function
         return new ExpFunction(t);
     }
 
-   
 
-    public double getApproximation(double val)
+
+    public double getApproximation()
     {
-        return Math.exp(target.getApproximation(val));
+        return Math.exp(target.getApproximation());
     }
 
     @Override

@@ -35,9 +35,9 @@ public class DivideFunction  extends Function {
 
     }
     @Override
-    public double getApproximation(double val)
+    public double getApproximation()
     {
-        return a.getApproximation(val) + b.getApproximation(val);
+        return a.getApproximation() + b.getApproximation();
     }
 
 

@@ -27,9 +27,9 @@ public class TanFunction extends Function
 
 
 
-    public double getApproximation(double val)
+    public double getApproximation()
     {
-        return Math.tan(target.getApproximation(val));
+        return Math.tan(target.getApproximation());
     }
 
 

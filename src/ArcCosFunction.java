@@ -14,8 +14,8 @@ public class ArcCosFunction  extends Function{
     }
 
     @Override
-    double getApproximation(double a) {
-        return Math.acos(target.getApproximation(a));
+    double getApproximation() {
+        return Math.acos(target.getApproximation());
     }
 
 

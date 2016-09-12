@@ -14,9 +14,9 @@ public class addFunction extends Function
         return a.getName() + "+" + b.getName();
     }
 
-    public double getApproximation(double val)
+    public double getApproximation()
     {
-        return a.getApproximation(val) + b.getApproximation(val);
+        return a.getApproximation() + b.getApproximation();
     }
     public Function getDerive()
     {

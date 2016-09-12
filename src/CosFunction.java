@@ -23,8 +23,8 @@ public class CosFunction extends Function {
     }
 
 
-    public double getApproximation(double val) {
-        return Math.cos(target.getApproximation(val));
+    public double getApproximation() {
+        return Math.cos(target.getApproximation());
     }
 
     @Override

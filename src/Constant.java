@@ -22,7 +22,7 @@ public class Constant extends Function
         return null;
     }
 
-    public double getApproximation(double val)
+    public double getApproximation()
     {
         return value;
     }

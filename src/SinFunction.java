@@ -23,8 +23,8 @@ public class SinFunction extends Function {
     }
 
 
-    public double getApproximation(double val) {
-        return Math.sin(target.getApproximation(val));
+    public double getApproximation() {
+        return Math.sin(target.getApproximation());
     }
 
     @Override

@@ -27,9 +27,9 @@ public class ArctanFunction extends Function
 
 
 
-    public double getApproximation(double val)
+    public double getApproximation()
     {
-        return Math.atan(target.getApproximation(val));
+        return Math.atan(target.getApproximation());
     }
 
     @Override

@@ -13,8 +13,8 @@ public class Monomial extends Function {
         return null;
     }
 
-    public double getApproximation(double val) {
-        return Math.pow(target.getApproximation(val), degree);
+    public double getApproximation() {
+        return Math.pow(target.getApproximation(), degree);
     }
 
     @Override

@@ -27,9 +27,9 @@ public class LogFunction extends Function
 
 
 
-    public double getApproximation(double val)
+    public double getApproximation()
     {
-        return Math.log(target.getApproximation(val));
+        return Math.log(target.getApproximation());
     }
 
     @Override

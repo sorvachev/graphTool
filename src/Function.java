@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -9,7 +7,7 @@ abstract public class Function {
     public boolean parity;
     private String name;
     abstract String  getName();
-    abstract  double  getApproximation(double a);
+    abstract  double  getApproximation();
     abstract Function  getDerive();
     public  String getTargetName()
     {
@@ -81,7 +79,7 @@ abstract public class Function {
             }
 
             @Override
-            double getApproximation(double f) {
+            double getApproximation() {
                 return 0;
             }
 
