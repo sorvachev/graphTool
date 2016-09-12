@@ -24,6 +24,6 @@ public class ArcCosFunction  extends Function{
     {
         return MultiplyFunction.getInstance(Constant.ONE, Monomial.getInstance(SubstactFunction.getInstance(Constant.ONE, Monomial.getInstance(target, 2)), 0.5 ));
     }
-   
+
 
 }
