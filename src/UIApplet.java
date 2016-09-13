@@ -275,6 +275,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
             Graphics2D g = (Graphics2D) gbase;
 
             int w = this.getWidth();
+
             int h = this.getHeight();
 
             view.width = w;
@@ -410,14 +411,14 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
             ys = "0";
 
         try {
-            double x = Function.parse(xs).getApproximation();
+            double x = Function.parse(xs).getApproximation() + 4;
             view.x = graph.toPixelsX(x);
         }
         catch (Exception ex)
         {}
 
         try {
-            double y = Function.parse(ys).getApproximation();
+            double y = Function.parse(ys).getApproximation() + 6;
             view.y = graph.toPixelsY(y);
         }
         catch (Exception ex)
