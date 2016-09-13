@@ -22,7 +22,7 @@ public class Main
             try {
                 Function f = line.length() == 0 && lastDerivative != null ? lastDerivative : Function.parse(line);
                 System.out.println("d/dx(" + f + ")");
-                System.out.println(lastDerivative = f.derive());
+                System.out.println(lastDerivative = f.getDerive());
             }
             catch (Exception ex)
             {

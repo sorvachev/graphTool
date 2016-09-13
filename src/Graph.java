@@ -75,7 +75,7 @@ public class Graph
                 for (int fi = 0; fi < f.length; fi++)
                 {
                     Function func = f[fi];
-                    double prevVal = func.getApproximation(toGraphScaleX(x * CACHE_SIZE - 1));
+                    double prevVal = func.getApproximation() + toGraphScaleX(x * CACHE_SIZE - 1);
                     int xMin = x * CACHE_SIZE;
                     int xMax = (x+1) * CACHE_SIZE;
                     for (int i = xMin - 1; i <= xMax + 1; i++)
@@ -84,7 +84,7 @@ public class Graph
                         if (i >= xMin && i < xMax)
                             val = fCache[fi][i - xMin];
                         else
-                            val = func.getApproximation(toGraphScaleX(i));
+                            val = func.getApproximation() + toGraphScaleX(i);
                         if ((val >= yMin && val <= yMax) || (val < yMin) != (prevVal < yMin))
                         {
                             canUseEmptyImage = false;
@@ -154,7 +154,7 @@ public class Graph
         for (int i = f.length - 1; i >= 0; i--)
         {
             g.setColor(FUNCTION_COLORS[i % FUNCTION_COLORS.length]);
-            double prevVal = f[i].getApproximation(toGraphScaleX(x-1));
+            double prevVal = f[i].getApproximation() * toGraphScaleX(x-1);
             fillCache(x / CACHE_SIZE);
             for (int j = x; j <= x + w + 1; j++)
             {
@@ -163,7 +163,7 @@ public class Graph
                 if (j < x + w)
                     val = fCache[i][j-x];
                 else
-                    val = f[i].getApproximation(toGraphScaleX(j));
+                    val = f[i].getApproximation() * toGraphScaleX(j);
                 if (isValidNumber(val))
                 {
                     if (!isValidNumber(prevVal))
@@ -189,7 +189,7 @@ public class Graph
         {
             for (int i = 0; i < CACHE_SIZE; i++)
             {
-                fCache[fi][i] = f[fi].getApproximation(toGraphScaleX(pos * CACHE_SIZE + i));
+                fCache[fi][i] = f[fi].getApproximation() * toGraphScaleX(pos * CACHE_SIZE + i);
             }
         }
     }
