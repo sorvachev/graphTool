@@ -38,7 +38,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.Document;
 
 @SuppressWarnings("serial")
-public class GraphPanel extends JPanel implements MouseMotionListener, ComponentListener, ActionListener, DocumentListener, MouseWheelListener
+public class UIApplet extends JPanel implements MouseMotionListener, ComponentListener, ActionListener, DocumentListener, MouseWheelListener
 {
     private static JTextField fText;
     private static JTextField gText;
@@ -73,7 +73,7 @@ public class GraphPanel extends JPanel implements MouseMotionListener, Component
         JFrame frame = new JFrame("JGraph");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        GraphPanel graphPanel = new GraphPanel();
+        UIApplet graphPanel = new UIApplet();
         graphPanel.addMouseMotionListener(graphPanel);
         graphPanel.addMouseWheelListener(graphPanel);
 
@@ -253,12 +253,12 @@ public class GraphPanel extends JPanel implements MouseMotionListener, Component
 
     private Timer changeTimer;
 
-    public GraphPanel()
+    public UIApplet()
     {
         this(new Graph());
     }
 
-    public GraphPanel(Graph graph)
+    public UIApplet(Graph graph)
     {
         super();
         this.graph = graph;
@@ -410,14 +410,14 @@ public class GraphPanel extends JPanel implements MouseMotionListener, Component
             ys = "0";
 
         try {
-            double x = Function.parse(xs).getApproximation(0);
+            double x = Function.parse(xs).getApproximation();
             view.x = graph.toPixelsX(x);
         }
         catch (Exception ex)
         {}
 
         try {
-            double y = Function.parse(ys).getApproximation(0);
+            double y = Function.parse(ys).getApproximation();
             view.y = graph.toPixelsY(y);
         }
         catch (Exception ex)
@@ -473,7 +473,7 @@ public class GraphPanel extends JPanel implements MouseMotionListener, Component
         {}
 
         try {
-            double val = Function.parse(xScaleText.getText()).getApproximation(0);
+            double val = Function.parse(xScaleText.getText()).getApproximation();
             if (val > 0)
                 xScale = val;
         }
@@ -481,7 +481,7 @@ public class GraphPanel extends JPanel implements MouseMotionListener, Component
         {}
 
         try {
-            double val = Function.parse(yScaleText.getText()).getApproximation(0);
+            double val = Function.parse(yScaleText.getText()).getApproximation();
             if (val > 0)
                 yScale = val;
         }
