@@ -77,7 +77,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         graphPanel.addMouseMotionListener(graphPanel);
         graphPanel.addMouseWheelListener(graphPanel);
 
-        Graph graph = graphPanel.graph;
+//        Graph graph = graphPanel.graph;
 
         JPanel panel;
         JLabel label;
@@ -124,7 +124,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         JCheckBox box;
 
         box = new JCheckBox("Gridlines");
-        box.setSelected(graph.hasGridlines());
+        box.setSelected(true);
         box.addActionListener(graphPanel);
         panel = new JPanel();
         panel.add(box);
@@ -134,7 +134,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         gridlineBox = box;
 
         box = new JCheckBox("Scale markers");
-        box.setSelected(graph.showingScale());
+        box.setSelected(true);
         box.addActionListener(graphPanel);
         panel = new JPanel();
         panel.add(box);
@@ -255,10 +255,10 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
 
     public UIApplet()
     {
-        this(new Graph());
+        //this(new Graph());
     }
 
-    public UIApplet(Graph graph)
+  /*  public UIApplet(Graph graph)
     {
         super();
         this.graph = graph;
@@ -267,7 +267,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         changeTimer.setInitialDelay(500);
         changeTimer.setRepeats(false);
     }
-
+*/
     @Override
     public void paint(Graphics gbase)
     {
@@ -283,7 +283,9 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
             view.x -= w / 2;
             view.y -= h / 2;
 
+
             graph.draw(g, view);
+
 
             view.x += w / 2;
             view.y += h / 2;
