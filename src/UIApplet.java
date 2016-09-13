@@ -77,7 +77,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         graphPanel.addMouseMotionListener(graphPanel);
         graphPanel.addMouseWheelListener(graphPanel);
 
-//        Graph graph = graphPanel.graph;
+   Graph graph = graphPanel.graph;
 
         JPanel panel;
         JLabel label;
