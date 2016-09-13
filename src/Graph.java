@@ -79,7 +79,7 @@ public class Graph {
                 test_loop:
                 for (int fi = 0; fi < f.length; fi++) {
                     Function func = f[fi];
-                    double prevVal = func.getApproximation(toGraphScaleX(x * CACHE_SIZE - 1));
+                    double prevVal = func.getApproximation() + toGraphScaleX(x * CACHE_SIZE - 1);
                     int xMin = x * CACHE_SIZE;
                     int xMax = (x + 1) * CACHE_SIZE;
                     for (int i = xMin - 1; i <= xMax + 1; i++) {
@@ -87,7 +87,7 @@ public class Graph {
                         if (i >= xMin && i < xMax)
                             val = fCache[fi][i - xMin];
                         else
-                            val = func.getApproximation(toGraphScaleX(i));
+                            val = func.getApproximation() + toGraphScaleX(i);
                         if ((val >= yMin && val <= yMax) || (val < yMin) != (prevVal < yMin)) {
                             canUseEmptyImage = false;
                             break test_loop;
@@ -128,5 +128,21 @@ return new BufferedImage();
         s /= SCALE_INTERVAL;
         s *= yScale;
         return -s;
+    }
+
+    private void fillCache(int pos)
+    {
+        if (fCachePos == pos && cacheValid)
+            return;
+
+        fCachePos = pos;
+        cacheValid = true;
+        for (int fi = 0; fi < f.length; fi++)
+        {
+            for (int i = 0; i < CACHE_SIZE; i++)
+            {
+                fCache[fi][i] = f[fi].getApproximation() + toGraphScaleX(pos * CACHE_SIZE + i);
+            }
+        }
     }
 }
