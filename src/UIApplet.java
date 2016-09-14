@@ -255,10 +255,10 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
 
     public UIApplet()
     {
-        //this(new Graph());
+        this(new Graph());
     }
 
-  /*  public UIApplet(Graph graph)
+   public UIApplet(Graph graph)
     {
         super();
         this.graph = graph;
@@ -267,7 +267,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         changeTimer.setInitialDelay(500);
         changeTimer.setRepeats(false);
     }
-*/
+
     @Override
     public void paint(Graphics gbase)
     {
