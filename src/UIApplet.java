@@ -77,7 +77,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         graphPanel.addMouseMotionListener(graphPanel);
         graphPanel.addMouseWheelListener(graphPanel);
 
-   Graph graph = graphPanel.graph;
+  // Graph graph = graphPanel.graph;
 
         JPanel panel;
         JLabel label;
@@ -244,7 +244,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         frame.setVisible(true);
     }
 
-    private Graph graph;
+   // private Graph graph;
 
     private Rectangle view = new Rectangle();
     private int mouseX;
@@ -253,7 +253,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
 
     private Timer changeTimer;
 
-    public UIApplet()
+   /* public UIApplet()
     {
         this(new Graph());
     }
@@ -267,7 +267,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         changeTimer.setInitialDelay(500);
         changeTimer.setRepeats(false);
     }
-
+*/
     @Override
     public void paint(Graphics gbase)
     {
@@ -284,7 +284,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
             view.y -= h / 2;
 
 
-            graph.draw(g, view);
+           // graph.draw(g, view);
 
 
             view.x += w / 2;
@@ -317,8 +317,8 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
             mouseY = my;
 
             manualUpdate = true;
-            xText.setText(Function.truncate(String.valueOf(graph.toGraphScaleX(view.x)), 4));
-            yText.setText(Function.truncate(String.valueOf(graph.toGraphScaleY(view.y)), 4));
+         //   xText.setText(Function.truncate(String.valueOf(graph.toGraphScaleX(view.x)), 4));
+           // yText.setText(Function.truncate(String.valueOf(graph.toGraphScaleY(view.y)), 4));
             manualUpdate = false;
 
             repaint();
@@ -414,14 +414,14 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
 
         try {
             double x = Function.parse(xs).getApproximation() + 4;
-            view.x = graph.toPixelsX(x);
+            //view.x = graph.toPixelsX(x);
         }
         catch (Exception ex)
         {}
 
         try {
             double y = Function.parse(ys).getApproximation() + 6;
-            view.y = graph.toPixelsY(y);
+           // view.y = graph.toPixelsY(y);
         }
         catch (Exception ex)
         {}
@@ -438,12 +438,12 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         }
         else if (e.getSource() == gridlineBox)
         {
-            graph.setGridlines(gridlineBox.isSelected());
+           // graph.setGridlines(gridlineBox.isSelected());
             repaint();
         }
         else if (e.getSource() == scaleBox)
         {
-            graph.setShowScale(scaleBox.isSelected());
+           // graph.setShowScale(scaleBox.isSelected());
             repaint();
         }
     }
@@ -495,7 +495,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         yScaleText.setText(String.valueOf(yScale));
 
         changeTimer.stop();
-
+/*
         graph = new Graph(arr.toArray(new Function[0]));
         graph.setGridlines(gridlineBox.isSelected());
         graph.setShowScale(scaleBox.isSelected());
@@ -503,6 +503,7 @@ public class UIApplet extends JPanel implements MouseMotionListener, ComponentLi
         graph.setYScale(yScale);
         System.out.println(graph);
         repaint();
+        */
     }
 
 }
